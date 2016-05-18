@@ -24,7 +24,20 @@
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
-                <!-- Clean Lifecycle -->
+                    <!-- Property from parent -->
+                    <execution>
+                        <id>echo-prop</id>
+                        <phase>pre-clean</phase>
+                        <configuration>
+                            <target>
+                                <echo>${prop}</echo>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <!-- Clean Lifecycle -->
                     <execution>
                         <id>pre-clean-target</id>
                         <phase>pre-clean</phase>
@@ -61,7 +74,7 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
-                    
+
                     <!-- Default Lifecycle -->
                     <execution>
                         <id>validate-target</id>
@@ -293,7 +306,8 @@
                     </execution>
                     <execution>
                         <id>post-integration-test-target</id>
-                        <phase>post-integration-test</phase><configuration>
+                        <phase>post-integration-test</phase>
+                        <configuration>
                             <target>
                                 <echo>post-integration-test</echo>
                             </target>
@@ -338,7 +352,7 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
-                    
+
                     <!-- Site Lifecycle -->
                     <execution>
                         <id>pre-site-target</id>

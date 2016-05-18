@@ -3,7 +3,7 @@
 
     <groupId>eval.xyz</groupId>
     <artifactId>pom</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>pom</name>
@@ -12,7 +12,7 @@
     <scm>
         <connection>scm:git:git@github.com:marcmoe/pom.git</connection>
         <developerConnection>scm:git:git@github.com:marcmoe/pom.git</developerConnection>
-        <tag>pom-0.0.3</tag>
+        <tag>HEAD</tag>
         <url>scm:git:git@github.com:tobrien/marcmoe/pom.git</url>
     </scm>
   

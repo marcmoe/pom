@@ -4,7 +4,7 @@
     <parent>
         <artifactId>pom</artifactId>
         <groupId>eval.xyz</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>child1</artifactId>

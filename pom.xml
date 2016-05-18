@@ -10,9 +10,8 @@
     <url>http://maven.apache.org</url>
 
     <scm>
-        <connection>scm:git:git@github.com:marcmoe/pom.git</connection>
-        <url>scm:git:git@github.com:tobrien/marcmoe/pom.git</url>
-        <developerConnection>scm:git:git@github.com:marcmoe/pom.git</developerConnection>
+        <connection>scm:git:ssh://marcmoe@github.com:/marcmoe/pom.git</connection>
+        <developerConnection>scm:git:ssh://marcmoe@github.com:/marcmoe/pom.git</developerConnection>
       <tag>pom-0.0.1</tag>
   </scm>
 

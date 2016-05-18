@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eval.xyz</groupId>
@@ -10,8 +9,33 @@
     <name>pom</name>
     <url>http://maven.apache.org</url>
 
+    <scm>
+        <connection>scm:git:git@github.com:marcmoe/pom.git</connection>
+        <developerConnection>scm:git:git@github.com:marcmoe/pom.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>scm:git:git@github.com:tobrien/marcmoe/pom.git</url>
+    </scm>
+  
+      <distributionManagement>
+        <repository>
+            <id>fs-release</id>
+            <url>file:///tmp/releases</url>
+        </repository>
+<!--         <snapshotRepository>
+            <id>fs-snapshot</id>
+            <url>file:///tmp/snapshots</url>
+        </snapshotRepository> -->
+        <!-- This has to be set to something, but value is rubbish atm -->
+<!--         <site>
+            <id>site</id>
+            <url>scp://localhost:5000/broken</url>
+        </site> -->
+    </distributionManagement>
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <prop>unset</prop>
     </properties>
 
     <modules>
@@ -35,9 +59,17 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.7</version>
+                    <version>1.8</version>
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
     </build>
 </project>

@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -24,7 +23,20 @@
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
-                <!-- Clean Lifecycle -->
+                    <!-- Property from parent -->
+                    <execution>
+                        <id>echo-prop</id>
+                        <phase>test</phase>
+                        <configuration>
+                            <target>
+                                <echo>${prop}</echo>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <!-- Clean Lifecycle -->
                     <execution>
                         <id>pre-clean-target</id>
                         <phase>pre-clean</phase>
@@ -61,7 +73,7 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
-                    
+
                     <!-- Default Lifecycle -->
                     <execution>
                         <id>validate-target</id>
@@ -293,7 +305,8 @@
                     </execution>
                     <execution>
                         <id>post-integration-test-target</id>
-                        <phase>post-integration-test</phase><configuration>
+                        <phase>post-integration-test</phase>
+                        <configuration>
                             <target>
                                 <echo>post-integration-test</echo>
                             </target>
@@ -338,7 +351,7 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
-                    
+
                     <!-- Site Lifecycle -->
                     <execution>
                         <id>pre-site-target</id>
